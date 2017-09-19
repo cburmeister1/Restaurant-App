@@ -60,22 +60,21 @@ app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
 
-
-
 // Create New "Reservation" - takes in JSON input
-app.post("/api/new", function(req, res) {
+app.post("/api/tables", function(req, res) {
   var personData = req.body;
   var newPerson = new Person(personData.reserve_name,personData.reserve_email,personData.reserve_phone,personData.reserve_uniqueID);
 
-  if(tables.length <= 5){
+  var reserveSuccessful;
+
+  if(tables.length < 5){
     tables.push(newPerson);
+    reserveSuccessful = true;
   }else{
-    waiting.push(newPerson);
+    waitlist.push(newPerson);
+    reserveSuccessful = false;
   }
-
-  console.log(newPerson);
-
-  res.json(newPerson);
+  res.json(reserveSuccessful);
 });
 
 // Starts the server to begin listening
