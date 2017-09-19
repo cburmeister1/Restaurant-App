@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extendednp: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
@@ -23,7 +23,7 @@ var tables = [];
 
 function Person(reserve_name,reserve_phone,reserve_email,reserve_uniqueID){
   this.reserve_name = reserve_name;
-  this.reserve_phone = reserve_reserve_phone;
+  this.reserve_phone = reserve_phone;
   this.reserve_email = reserve_email;
   this.reserve_uniqueID = reserve_uniqueID;
 }
@@ -67,8 +67,8 @@ app.post("/api/new", function(req, res) {
   var personData = req.body;
   var newPerson = new Person(personData.reserve_name,personData.reserve_email,personData.reserve_phone,personData.reserve_uniqueID);
 
-  if(confirmed.length <= 5){
-    confirmed.push(newPerson);
+  if(tables.length <= 5){
+    tables.push(newPerson);
   }else{
     waiting.push(newPerson);
   }
