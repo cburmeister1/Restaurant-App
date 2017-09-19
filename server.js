@@ -22,10 +22,10 @@ var waitlist = [];
 var tables = [];
 
 function Person(reserve_name,reserve_phone,reserve_email,reserve_uniqueID){
-  this.reserve_name = reserve_name;
-  this.reserve_phone = reserve_phone;
-  this.reserve_email = reserve_email;
-  this.reserve_uniqueID = reserve_uniqueID;
+  this.customerName = reserve_name;
+  this.customerPhone = reserve_phone;
+  this.customerEmail = reserve_email;
+  this.customerID = reserve_uniqueID;
 }
 
 // Routes
