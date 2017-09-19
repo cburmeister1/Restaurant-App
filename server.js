@@ -20,6 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 var waitlist = [];
 var tables = [];
+var pageViews = 0;
 
 function Person(reserve_name,reserve_phone,reserve_email,reserve_uniqueID){
   this.customerName = reserve_name;
@@ -59,6 +60,13 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
+
+//return pageViews
+app.get("/api/pageViews", function(req, res) {
+  pageViews++;
+  return res.json(pageViews);
+});
+
 
 // Create New "Reservation" - takes in JSON input
 app.post("/api/tables", function(req, res) {
