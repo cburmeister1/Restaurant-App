@@ -56,7 +56,7 @@
 
             </form>
             <div class="text-left">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"> Submit</button>
+              <button type="submit" class="btn btn-primary submit" id="reserve-btn"> Submit</button>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
   </div>
 
   <script type="text/javascript">
-    $(".submit").on("click", function() {
+    $("#reserve-btn").on("click", function() {
       // Here we grab the form elements
       var newReservation = {
         customerName: $("#reserve_name").val().trim(),
