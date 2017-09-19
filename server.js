@@ -63,7 +63,7 @@ app.get("/api/waitlist", function(req, res) {
 // Create New "Reservation" - takes in JSON input
 app.post("/api/tables", function(req, res) {
   var personData = req.body;
-  var newPerson = new Person(personData.reserve_name,personData.reserve_email,personData.reserve_phone,personData.reserve_uniqueID);
+  var newPerson = new Person(personData.customerName,personData.customerEmail,personData.phoneNumber,personData.customerID);
 
   var reserveSuccessful;
 
